@@ -11,5 +11,6 @@ Rails.application.routes.draw do
     get :subjects
   end
 
-  get 'subjects/reports' => 'reports#subjects'
+  get 'reports/subjects' => 'reports#subjects', as: :report_subjects
+  get 'visitors' => 'visitors#index'
 end
