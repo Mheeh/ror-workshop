@@ -1,12 +1,13 @@
-%p#notice= notice
+%table.table.table-condensed
+  %tbody
+    %tr
+      %td= "#{t('payments.columns.student')}:"
+      %td= payment.student.decorate.full_name
+    %tr
+      %td= "#{t('payments.columns.value')}:"
+      %td= payment.decorate.value_str
+    %tr
+      %td= "#{t('payments.columns.date')}:"
+      %td= payment.decorate.date_str
 
-%p
-  %b Value:
-  = @payment.value
-%p
-  %b Date:
-  = @payment.date
-
-= link_to 'Edit', edit_payment_path(@payment)
-\|
-= link_to 'Back', payments_path
+= link_to t('shared.back'), payments_path, class: 'btn btn-default'

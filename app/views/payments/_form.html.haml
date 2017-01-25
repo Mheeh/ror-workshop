@@ -1,9 +1,9 @@
-= simple_form_for(@payment) do |f|
+= simple_form_for payment do |f|
   = f.error_notification
 
   .form-inputs
     = f.input :value
     = f.input :date
-
+    = f.association :student, :label_method => lambda {|s| "#{s.decorate.full_name}"}
   .form-actions
     = f.button :submit
