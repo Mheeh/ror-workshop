@@ -1,7 +1,8 @@
 require 'spec_helper'
 
 describe PaymentDecorator do
-  let(:payment) { create :payment, value: 150.00, date: '2010-10-03' }
+  let(:student) { create :student}
+  let(:payment) { create :payment, value: 150.00, date: '2010-10-03', student: student }
 
   describe "#value" do
     subject { payment.decorate.value_str }
