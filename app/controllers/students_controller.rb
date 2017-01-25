@@ -1,6 +1,10 @@
 class StudentsController < ApplicationController
+  expose(:students)
   expose(:student, attributes: :student_params)
   expose(:student_subject_items) { student.subject_items }
+
+
+  before_action :authenticate_user!
 
   def create
     if student.save
@@ -25,7 +29,7 @@ class StudentsController < ApplicationController
 
   private
   def student_params
-    params.require(:student).permit(:first_name, :last_name, :subject_items, :birthdate, subject_item_ids: [])
+    params.require(:student).permit(:first_name, :last_name, :birthdate, subject_item_ids: [])
   end
 
 end
