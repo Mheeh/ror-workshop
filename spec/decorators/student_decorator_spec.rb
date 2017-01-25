@@ -41,7 +41,7 @@ describe StudentDecorator do
 
     describe 'when student has birthdate' do
       subject { student2.decorate.birthdate_str }
-      it { is_expected.to eq '1990-12-24'}
+      it { is_expected.to eq '1990-12_24'}
     end
 
   end

@@ -14,6 +14,6 @@ class StudentDecorator < BaseDecorator
   end
 
   def birthdate_str
-    birthdate ? birthdate.strftime("%F") : ''
+    birthdate ? birthdate.strftime("%Y-%m_%d") : ''
   end
 end
