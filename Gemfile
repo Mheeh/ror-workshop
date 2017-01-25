@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.2.3'
 
+gem 'pry-rails', :group => :development
+
 gem 'bootstrap-sass'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'decent_exposure'

@@ -3,6 +3,8 @@ class TeachersController < ApplicationController
   expose(:teacher, attributes: :teacher_params)
   expose(:teacher_subject_items) { teacher.subject_items }
 
+  before_filter :authenticate_user!
+
   def create
     if teacher.save
       redirect_to teacher_path(teacher), notice: I18n.t('shared.created', resource: 'Teacher')
@@ -29,4 +31,5 @@ class TeachersController < ApplicationController
   def teacher_params
     params.require(:teacher).permit(:first_name, :last_name, :academic_title, subject_item_ids: [])
   end
+
 end
