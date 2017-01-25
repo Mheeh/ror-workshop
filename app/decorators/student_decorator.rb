@@ -12,4 +12,8 @@ class StudentDecorator < BaseDecorator
       '%.2f' % (notes.inject(:+).to_f / notes.length).round(2)
     end
   end
+
+  def birthdate_str
+    birthdate ? birthdate.strftime("%F") : ''
+  end
 end
