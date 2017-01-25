@@ -22,6 +22,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'dotenv-rails'
 gem 'gretel'
 
+gem 'faker' #lazy seed
+
 group :development do
   gem 'better_errors'
   gem 'html2haml'
